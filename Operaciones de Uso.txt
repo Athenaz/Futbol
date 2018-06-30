@@ -1,0 +1,205 @@
+CREATE KEYSPACE proyecto
+  WITH REPLICATION = { 
+   'class' : 'SimpleStrategy', 
+   'replication_factor' : 1 
+  };
+}
+
+use proyecto;
+
+create table clubes(
+idclub int primary key,
+nombreclub text);
+
+create table equipo(
+idequipo int primary key,
+nombreequipo text);
+
+create table jugadores(
+idjugador int primary key,
+fechanac date,
+nombrejugador text,
+peso int);
+
+create table temporadas(
+cantjornadas int,
+fechainicio date,
+fechafin date,
+idtemporada int primary key);
+
+create table jornadas(
+idjornada int primary key,
+fechainicio date,
+fechafin date,
+nombrejornada text);
+
+create table entrenador(
+identrenador int primary key,
+fechanac date,
+nombreentrenador text,
+peso int);
+
+create table arbitro(
+idarbitro int primary key,
+fechanac date,
+nombrearbitro text,
+peso int);
+
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (9,’2013-05-07’,’2015-03-07’,1);
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (5,’2014-02-01’,’2016-08-06’,2);
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (7,’2015-07-01’,’2017-04-04’,3);
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (2,’2016-02-10’,’2018-03-12’,4);
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (9,’2017-01-03’,’2019-05-02’,5);
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (6,’2002-11-05’,’2004-02-11’,6);
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (8,’2003-04-02’,’2005-06-05’,7);
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (3,’2004-09-03’,’2006-03-10’,8);
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (4,’2005-03-03’,’2007-04-11’,9);
+Insert into temporadas(cantjornadas,fechainicio,fechafin,idtemporada) 
+Values (4,’2006-01-10’,’2008-06-01’,10);
+
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (1,’2011-02-01’,’2010-05-01’, ‘Champions’);
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (2,’2012-10-02’,’2011-04-07’, ‘Santender’);
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (3,’2013-07-04’,’2012-02-10’, ‘Copa del rey’);
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (4,’2014-02-09’,’2013-04-06’, ‘Europa league’);
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (5,’2015-07-03’,’2014-06-02’, ‘Copa Davivienda’);
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (6,’2000-03-02’,’1998-08-02’, ‘Cachurecos’);
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (7,’2001-11-05’,’1999-03-08’, ‘Balones de Oro’);
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (8,’2002-05-10’,’2000-07-11’, ‘Super dotados’);
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (9,’2003-07-02’,’2001-07-08’, ‘Estrellas del futuro’);
+Insert into jornadas(idjornada,fechafin,fechainicio,nombrejornada) 
+Values (10,’2004-08-01’,’2002-07-08’, ‘liga de leyendas’);
+
+insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (1,’2010-05-01’,’Messi’,200);
+insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (2,’2013-04-12’,’Ronaldo’,400);
+insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (3,’2015-10-04’,’Dani’,300);
+insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (4,’2016-08-13’,’Neymar’,200);
+insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (5,’2018-07-01’,’Nani’,300);
+Insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (6,’2008-07-05’,’Faker’,900);
+Insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (7,’2011-02-12’,’Bold’,700);
+Insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (8,’2013-12-03’,’Oliveraton’,500);
+Insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (9,’2014-06-10’,’Arbeloa’,100);
+Insert into jugadores(idjugador,fechanac,nombrejugador,peso) 
+Values (10,’2016-09-06’,’Moh’,800);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (1,’Real Sociedad’);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (2,’Milan’);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (3,’FC Barcelona’);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (4,’Chelsey’);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (5,’Bayern Munich’);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (6,’Cloud 9’);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (7,’Log Horizon’);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (8,’Real Choloma’);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (9,’Seleccion de Jamaica’);
+
+Insert into equipo(idequipo,nombreequipo) 
+Values (10,’SnapChat’);
+
+
+UPDATE equipo SET idequipo = '11', nombreequipo = 'Hola' WHERE idequipo = 1;
+
+Insert into clubes(idclub,nombreclub) 
+Values (1,’Naranjita’);
+Insert into clubes(idclub,nombreclub) 
+Values (2,’compas’);
+Insert into clubes(idclub,nombreclub) 
+Values (3,’paisas’);
+Insert into clubes(idclub,nombreclub) 
+Values (4,’we fire’);
+Insert into clubes(idclub,nombreclub) 
+Values (5,’los afi’);
+Insert into clubes(idclub,nombreclub) 
+Values (6,’SuperCampeones’);
+Insert into clubes(idclub,nombreclub) 
+Values (7,’Aldea de la Hoja’);
+Insert into clubes(idclub,nombreclub) 
+Values (8,’Sangre Saiyan’);
+Insert into clubes(idclub,nombreclub) 
+Values (9,’Youtube’);
+Insert into clubes(idclub,nombreclub) 
+Values (10,’los santos’);
+
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (1,’2010-01-01’,’Guardiola’,200);
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (2,’2012-05-06’,’Mohurino’,400);
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (3,’2014-12-04’,’Zidan’,300);
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (4,’2011-07-03’,’David’,260);
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (5,’2013-06-02’,’Martino’,560);
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (6,’2008-11-11’,’Machado’,1999);
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (7,’2010-06-02’,’Bold’,300);
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (8,’2012-10-03’,’Phelps’,560);
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (9,’2009-02-04’,’Jordan’,710);
+Insert into entrenador(identrenador,fechanac,nombreentrenador,peso) 
+Values (10,’2011-03-07’,’Sedinho’,880);
+
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (1,’2000-01-02’,’Jorge’,200);
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (2,’1998-03-04’,’Daniel’,300);
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (3,’2011-04-11’,’Gabriel’,120);
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (4,’2012-01-12’,’James’,100);
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (5,’1990-05-02’,’Alexis’,400);
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (6,’1998-04-10’,’Ohara’,1998);
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (7,’1996-01-02’,’Uchiha’,200);
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (8,’2009-02-12’,’Angel’,300);
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (9,’2010-08-10’,’Jessie’,500);
+Insert into arbitro(idarbitro,fechanac,nombrearbitro,peso) 
+Values (10,’1988-11-12’,’Mejia’,600);
